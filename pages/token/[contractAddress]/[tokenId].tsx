@@ -33,7 +33,7 @@ const [randomColor1, randomColor2] = [randomColor(), randomColor()];
 
 export default function TokenPage({ nft, contractMetadata }: Props) {
   const [bidValue, setBidValue] = useState<string>();
-
+  console.log(nft);
   // Connect to marketplace smart contract
   const { contract: marketplace, isLoading: loadingContract } = useContract(
     MARKETPLACE_ADDRESS,
@@ -132,16 +132,17 @@ export default function TokenPage({ nft, contractMetadata }: Props) {
               <h3 className={styles.descriptionTitle}>Traits</h3>
 
               <div className={styles.traitsContainer}>
-                {Object.entries(nft?.metadata?.attributes || {}).map(
-                  ([key, value]) => (
-                    <div className={styles.traitContainer} key={key}>
-                      <p className={styles.traitName}>{key}</p>
-                      <p className={styles.traitValue}>
-                        {value?.toString() || ""}
-                      </p>
-                    </div>
-                  )
-                )}
+                {(
+                  (nft?.metadata?.attributes as Array<{
+                    trait_type: string;
+                    value: string;
+                  }>) || []
+                ).map((attribute, index) => (
+                  <div className={styles.traitContainer} key={index}>
+                    <p className={styles.traitName}>{attribute.trait_type}</p>
+                    <p className={styles.traitValue}>{attribute.value}</p>
+                  </div>
+                ))}
               </div>
 
               <h3 className={styles.descriptionTitle}>History</h3>
