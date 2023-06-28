@@ -27,8 +27,8 @@ const Home: NextPage = () => {
           <div className={styles.heroAssetFrame}>
             <Image
               src="/hero-asset.png"
-              width={860}
-              height={540}
+              width={512}
+              height={512}
               alt="Hero asset, NFT marketplace"
               quality={100}
               className={styles.heroAsset}
@@ -38,21 +38,12 @@ const Home: NextPage = () => {
             <div className={styles.heroBody}>
               <h1 className={styles.heroTitle}>
                 <span className={styles.heroTitleGradient}>
-                  Build NFT Marketplaces
+                  CodingCats NFT Marketplace
                 </span>
-                <br />
-                faster than ever.
               </h1>
               <p className={styles.heroSubtitle}>
-                <Link
-                  className={styles.link}
-                  href="https://thirdweb.com"
-                  target="_blank"
-                >
-                  thirdweb
-                </Link>{" "}
-                gives you the tools you need to create audited, performant, and
-                flexible NFT marketplaces in <b>hours</b>, <i>not months</i>.
+                CodingCats NFT Marketplace is simple but powerfull marketplace
+                for all looking for a great experience.
               </p>
 
               <div className={styles.heroCtaContainer}>
@@ -61,7 +52,7 @@ const Home: NextPage = () => {
                 </Link>
                 <Link
                   className={styles.secondaryCta}
-                  href="https://github.com/thirdweb-example/marketplace-v3"
+                  href="https://github.com/alperenweb3/codingcats-nft-marketplace"
                   target="_blank"
                 >
                   GitHub
